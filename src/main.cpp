@@ -3,7 +3,7 @@
 // put function declarations here:
 int myFunction(int, int);
 
-int redPin = 9; 
+int readPin = A5; 
 
 void setup() {
   // put your setup code here, to run once:
@@ -11,7 +11,8 @@ void setup() {
   pinMode(3,OUTPUT); //red
   pinMode(6,OUTPUT); //yellw
 
-  pinMode(redPin, OUTPUT);
+  pinMode(readPin, INPUT);
+  Serial.begin(9600);
 
 }
 
@@ -35,9 +36,13 @@ void loop() {
   // digitalWrite(3, LOW);
   
   // Project 4: Analog Pins 
-  analogWrite(redPin, 255);
-  delay(1000);
-  analogWrite(redPin, 40);
+  //analogWrite(redPin, 255);
+  //delay(1000);
+  //analogWrite(redPin, 40);
+  //delay(1000);
+
+  // Project 5: Voltmeter
+  Serial.println(analogRead(readPin));
   delay(1000);
 
 
