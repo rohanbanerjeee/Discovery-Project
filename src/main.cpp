@@ -4,12 +4,13 @@
 int myFunction(int, int);
 
 int readPin = A5; 
+float calcVal = 0;
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(9,OUTPUT); //green
-  pinMode(3,OUTPUT); //red
-  pinMode(6,OUTPUT); //yellw
+  //pinMode(9,OUTPUT); //green
+  //pinMode(3,OUTPUT); //red
+  //pinMode(6,OUTPUT); //yellw
 
   pinMode(readPin, INPUT);
   Serial.begin(9600);
@@ -42,8 +43,15 @@ void loop() {
   //delay(1000);
 
   // Project 5: Voltmeter
-  Serial.println(analogRead(readPin));
+  //Serial.println(analogRead(readPin));
+  //delay(1000);
+
+  // Project 6: Potentiometer
+  calcVal = (5.0/1023) * (analogRead(readPin));
+  Serial.println(calcVal);
   delay(1000);
+
+
 
 
 
